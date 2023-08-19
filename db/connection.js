@@ -5,7 +5,7 @@ dotenv.config(); // Load environment variables from .env file
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: process.env.DB_PASSWORD,
+  password: process.env.DB_PASSWORD, // Secure my password
   database: 'employee_management',
   waitForConnections: true,
   connectionLimit: 10,

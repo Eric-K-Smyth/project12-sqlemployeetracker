@@ -5,7 +5,7 @@ async function viewAllDepartments() {
   try {
     const [rows, fields] = await db.query('SELECT * FROM department');
     return rows; // Return only the rows containing department data
-  } catch (error) {
+  } catch (error) { //All funtions have the ability to return an error if something goes wrong
     throw error;
   }
 }
@@ -87,6 +87,7 @@ async function addDepartment(name) {
     }
   }
   
+  // Export modules to index.js
   module.exports = {
     viewAllDepartments,
     addRole,
