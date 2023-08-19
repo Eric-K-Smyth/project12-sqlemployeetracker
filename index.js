@@ -196,13 +196,13 @@ async function handleAddEmployee(answers) {
 // Function to prompt updating an employee's role
 function promptUpdateEmployeeRole() {
   // Fetch employees for choices
-  db.query('SELECT * FROM employee')
-    .then(([rows, fields]) => {
-      const employeeChoices = rows.map(employee => ({
+  viewAllEmployees() // Use the imported function directly
+    .then(employees => {
+      const employeeChoices = employees.map(employee => ({
         name: `${employee.first_name} ${employee.last_name}`,
         value: employee.id,
       }));
-      
+
       inquirer
         .prompt([
           {
