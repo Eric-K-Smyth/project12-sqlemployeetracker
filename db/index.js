@@ -3,13 +3,12 @@ const db = require('./connection');
 // Function to view all departments
 async function viewAllDepartments() {
     try {
-      const [rows, fields] = await db.query('SELECT * FROM department');
-      return rows;
+        const departments = await db.query('SELECT * FROM department');
+        return departments; // Return the result of the query
     } catch (error) {
-      throw error;
+        throw error;
     }
-  }
-
+}
   // Function to add a role
 async function addRole(title, salary, department_id) {
     try {
